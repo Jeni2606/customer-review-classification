@@ -1,0 +1,18 @@
+===== CATEGORY EVALUATION =====
+
+Accuracy : 1.0000
+Precision: 1.0000
+Recall   : 1.0000
+F1-score : 1.0000
+
+===== CLASSIFICATION REPORT =====
+
+Product Related   Precision: 1.00  Recall: 1.00  F1: 1.00
+Staff + Billing   Precision: 1.00  Recall: 1.00  F1: 1.00
+Suggestion        Precision: 1.00  Recall: 1.00  F1: 1.00
+
+===== CONFUSION MATRIX =====
+
+[[68  0  0]
+ [ 0 73  0]
+ [ 0  0 65]]
