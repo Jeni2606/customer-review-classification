@@ -71,14 +71,14 @@ The category model achieved 100% accuracy on the 206-sample evaluation split.
 
 ## Inference
 
-The trained models can be used to classify new customer reviews.
+The trained models are hosted on Hugging Face and can be downloaded automatically when the inference scripts are run.
 
-Example sentiment output:
+### Sentiment Classification
 
-```text
-Input:  "The staff was very helpful and the service was quick."
-Output: Positive
-```
+Run:
+
+```bash
+python test_sentiment.py
 
 ## Limitations
 
