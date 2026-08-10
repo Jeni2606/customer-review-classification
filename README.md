@@ -102,11 +102,24 @@ Output: Positive
 ```text
 customer-review-classification/
 ├── data/
-├── models/
-├── results/
-├── src/
-├── README.md
+│   ├── category_train.csv
+│   ├── category_test.csv
+│   ├── sentiment_train.csv
+│   ├── sentiment_test.csv
+│   ├── README.md
+│   └── models/
+│       └── results/
+│           ├── README.md
+│           ├── sentiment_results.txt
+│           └── category_results.txt
+│
+├── category.py
+├── sentiment.py
+├── test_category.py
+├── test_sentiment.py
+├── evaluate_category.py
+├── evaluate_sentiment.py
 ├── requirements.txt
-├── .gitignore
-└── LICENSE
+├── LICENSE
+└── README.md
 ```
