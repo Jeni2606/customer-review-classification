@@ -1,9 +1,12 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
-tokenizer = AutoTokenizer.from_pretrained("sentiment_model")
-model = AutoModelForSequenceClassification.from_pretrained("sentiment_model")
-
+tokenizer = AutoTokenizer.from_pretrained(
+    "Jenifer2606/vstar-customer-sentiment-distilbert"
+)
+model = AutoModelForSequenceClassification.from_pretrained(
+    "Jenifer2606/vstar-customer-sentiment-distilbert"
+)
 id2label = {
     0: "Negative",
     1: "Neutral",
