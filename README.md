@@ -9,11 +9,11 @@ This project uses DistilBERT to classify customer reviews across two tasks:
 - **Sentiment classification:** Negative, Neutral, Positive
 - **Category classification:** Product Related, Staff + Billing, Suggestion
 
-The project includes custom dataset preparation, text preprocessing, transformer based model training, evaluation, and inference.
+The project includes custom dataset preparation, text preprocessing, transformer-based model training, evaluation, and inference.
 
 ## Dataset
 
-The project uses a custom generated customer review dataset containing **1,026 reviews** with sentiment and category labels.
+The project uses a custom-generated customer review dataset containing **1,026 reviews** with sentiment and category labels.
 
 ### Labels
 
@@ -35,11 +35,19 @@ The project uses `distilbert-base-uncased` for both classification tasks.
 
 ### Sentiment Classification
 
-A DistilBERT sequence classification model was fine-tuned to classify reviews into three sentiment classes: `Negative` · `Neutral` · `Positive`.
+A DistilBERT sequence classification model was fine-tuned to classify reviews into three sentiment classes:
+
+- Negative
+- Neutral
+- Positive
 
 ### Category Classification
 
-A separate DistilBERT sequence classification model was fine-tuned to classify reviews into: `Product Related` · `Staff + Billing` · `Suggestion`.
+A separate DistilBERT sequence classification model was fine-tuned to classify reviews into three categories:
+
+- Product Related
+- Staff + Billing
+- Suggestion
 
 For both models, the original training setup used tokenization with a maximum sequence length of 512 tokens and a batch size of 8.
 
@@ -79,10 +87,41 @@ Run:
 
 ```bash
 python test_sentiment.py
+```
+
+The script loads the trained sentiment model from:
+
+`Jenifer2606/vstar-customer-sentiment-distilbert`
+
+Enter a customer review when prompted. The model predicts:
+
+- Negative
+- Neutral
+- Positive
+
+Type `exit` or `quit` to stop.
+
+### Category Classification
+
+Run:
+
+```bash
+python test_category.py
+```
+
+The script loads the trained category model from:
+
+`Jenifer2606/vstar-customer-category-distilbert`
+
+The model predicts one of the following categories:
+
+- Product Related
+- Staff + Billing
+- Suggestion
 
 ## Limitations
 
-- The dataset is custom generated and relatively small compared with large-scale NLP datasets.
+- The dataset is custom-generated and relatively small compared with large-scale NLP datasets.
 - The original experiments used an 80/20 train/evaluation split.
 - For the category model, the evaluation split was also used for epoch-wise evaluation during training, so the reported 100% score should not be treated as an unbiased held-out test result.
 - The project focuses on three predefined sentiment classes and three predefined review categories.
@@ -108,6 +147,7 @@ customer-review-classification/
 │   ├── sentiment_test.csv
 │   ├── README.md
 │   └── models/
+│       ├── README.md
 │       └── results/
 │           ├── README.md
 │           ├── sentiment_results.txt
@@ -123,3 +163,12 @@ customer-review-classification/
 ├── LICENSE
 └── README.md
 ```
+
+## Model Hosting
+
+The trained models are hosted on Hugging Face:
+
+- `Jenifer2606/vstar-customer-sentiment-distilbert`
+- `Jenifer2606/vstar-customer-category-distilbert`
+
+The large model weights are not stored directly in this GitHub repository. The inference scripts automatically download the required models from Hugging Face when they are run.
