@@ -2,8 +2,15 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import pandas as pd
 
-tokenizer = AutoTokenizer.from_pretrained("category_model")
-model = AutoModelForSequenceClassification.from_pretrained("category_model")
+tokenizer = AutoTokenizer.from_pretrained(
+    "Jenifer2606/vstar-customer-category-distilbert"
+)
+
+model = AutoModelForSequenceClassification.from_pretrained(
+    "Jenifer2606/vstar-customer-category-distilbert"
+)
+
+df = pd.read_csv("category_test.csv")
 
 id2label = {
     0: "Product Related",
