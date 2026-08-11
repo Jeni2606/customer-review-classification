@@ -77,29 +77,35 @@ The category model achieved 100% accuracy on the 206-sample evaluation split.
 
 > **Evaluation note:** The original category training procedure evaluated this same split during training. Therefore, the 100% result should not be interpreted as performance on a completely untouched held-out test set.
 
-## Inference
+## Live Demo
 
-The trained models are hosted on Hugging Face and can be downloaded automatically when the inference scripts are run.
+A browser-based demo is deployed on Hugging Face Spaces using Transformers.js, so predictions run entirely client-side — no server, no API calls, no cost.
 
-### Sentiment Classification
+**[Launch the demo →](https://huggingface.co/spaces/Jenifer2606/_Classification_Demo_)**
 
-Run:
+Enter any customer review and get real-time sentiment (Negative / Neutral / Positive) and category (Product Related / Staff + Billing / Suggestion) predictions, powered by the same DistilBERT models trained in this repo.
 
-```bash
-python test_sentiment.py
-```
+## Model Hosting
 
-The script loads the trained sentiment model from:
+Trained model weights are too large for GitHub, so they're hosted on Hugging Face:
 
-`Jenifer2606/vstar-customer-sentiment-distilbert`
+| Model | Format | Repository |
+|---|---|---|
+| Sentiment classifier | PyTorch | [Jenifer2606/vstar-customer-sentiment-distilbert](https://huggingface.co/Jenifer2606/vstar-customer-sentiment-distilbert) |
+| Category classifier | PyTorch | [Jenifer2606/vstar-customer-category-distilbert](https://huggingface.co/Jenifer2606/vstar-customer-category-distilbert) |
+| Sentiment classifier | ONNX (for browser inference) | [Jenifer2606/vstar-customer-sentiment-distilbert-ONNX](https://huggingface.co/Jenifer2606/vstar-customer-sentiment-distilbert-ONNX) |
+| Category classifier | ONNX (for browser inference) | [Jenifer2606/vstar-customer-category-distilbert-ONNX](https://huggingface.co/Jenifer2606/vstar-customer-category-distilbert-ONNX) |
 
-Enter a customer review when prompted. The model predicts:
+## Local Inference
 
-- Negative
-- Neutral
-- Positive
+For command-line inference instead of the web demo:
 
-Type `exit` or `quit` to stop.
+\`\`\`bash
+python test_sentiment.py   # interactive sentiment classification
+python test_category.py    # category prediction, saves to category_predictions.xlsx
+\`\`\`
+
+Both scripts download the trained models automatically from Hugging Face on first run.
 
 ### Category Classification
 
